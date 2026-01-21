@@ -28,11 +28,11 @@ export default function EventCard({
 }: Props) {
   return (
     <div
-      className={`text-black ${
+      className={`text-[#FDFDFD] ${
         !isLast && "border-b-[1px]"
-      } border-gray-200 w-full flex flex-row pt-2 pb-6 px-1`}>
+      } border-[#EDEDED] w-full flex flex-row pt-2 pb-6 px-1`}>
       <div
-        className={`${dm_Sans.className} text-[22px] w-[100px] flex-shrink-0 mr-4 font-[400] -mt-[2px]`}>
+        className={`${dm_Sans.className} text-[20px] w-[100px] flex-shrink-0 mr-4 font-[400] -mt-[2px]`}>
         {time}
       </div>
       <div className="flex-1 flex flex-col">
@@ -41,34 +41,30 @@ export default function EventCard({
             className={`${dm_Sans.className} text-[20px] font-[600] leading-tight tracking-tight`}>
             {title}
           </h2>
-          <p className={`${dm_Sans.className} text-sm`}>{description}</p>
+          <p className={`${dm_Sans.className} text-sm text-gray-400`}>{description}</p>
         </div>
         <div className="flex items-center">
           {imageURL && (
             <div
-              className={`overflow-x-clip relative min-w-[70px] w-[70px] h-[70px] border-[2px] border-[black] rounded-full ${
-                [
-                  "bg-gradient-to-r from-[#F571EA] to-[#F8D4FA]",
-                  "bg-gradient-to-r from-[#48FF57] to-[#D1FAD4]",
-                  "bg-gradient-to-r from-[#4591FF] to-[#D4E4FA]",
-                  "bg-gradient-to-r from-[#FFDD00] to-[#F6F9C1]",
-                ][index % 4]
-              }`}>
+              className={`overflow-clip relative min-w-[114px] w-[114px] h-[114px] rounded-full 
+                bg-gradient-to-r from-[#4591FF] to-[#D4E4FA]
+                border-[4px] border-[#1a1d24]
+                shadow-[0_0_20px_rgba(69,145,255,0.4)]`}>
               <Image
                 src={imageURL}
-                width={100}
-                height={100}
+                width={114}
+                height={114}
                 alt="profile"
-                className="object-cover absolute top-0 left-0 objecxt w-full h-full rounded-full grayscale brightness-105"
+                className="object-cover w-full h-full rounded-full grayscale brightness-105"
               />
             </div>
           )}
           <div className="ml-4 flex flex-col">
-            <p className={`${dm_Sans.className} text-[18px] font-[500]`}>
+            <p className={`${dm_Sans.className} text-[17px] font-[500]`}>
               {name}
             </p>
             <p
-              className={`${dm_Sans.className} text-[15px] font-[100] -mt-[1px]`}>
+              className={`${dm_Sans.className} text-[14px] font-[300] text-gray-400 -mt-[1px]`}>
               {position}
             </p>
           </div>
